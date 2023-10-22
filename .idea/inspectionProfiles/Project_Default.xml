@@ -1,0 +1,99 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="86">
+            <item index="0" class="java.lang.String" itemvalue="protobuf" />
+            <item index="1" class="java.lang.String" itemvalue="opt-einsum" />
+            <item index="2" class="java.lang.String" itemvalue="strsimpy" />
+            <item index="3" class="java.lang.String" itemvalue="nbclient" />
+            <item index="4" class="java.lang.String" itemvalue="cycler" />
+            <item index="5" class="java.lang.String" itemvalue="torchvision" />
+            <item index="6" class="java.lang.String" itemvalue="filelock" />
+            <item index="7" class="java.lang.String" itemvalue="python-louvain" />
+            <item index="8" class="java.lang.String" itemvalue="jupyterlab-widgets" />
+            <item index="9" class="java.lang.String" itemvalue="certifi" />
+            <item index="10" class="java.lang.String" itemvalue="graphviz" />
+            <item index="11" class="java.lang.String" itemvalue="Markdown" />
+            <item index="12" class="java.lang.String" itemvalue="terminado" />
+            <item index="13" class="java.lang.String" itemvalue="h5py" />
+            <item index="14" class="java.lang.String" itemvalue="nni" />
+            <item index="15" class="java.lang.String" itemvalue="rdflib" />
+            <item index="16" class="java.lang.String" itemvalue="tensorboard-data-server" />
+            <item index="17" class="java.lang.String" itemvalue="torch-cluster" />
+            <item index="18" class="java.lang.String" itemvalue="jupyter-client" />
+            <item index="19" class="java.lang.String" itemvalue="ipykernel" />
+            <item index="20" class="java.lang.String" itemvalue="nbconvert" />
+            <item index="21" class="java.lang.String" itemvalue="dash-bootstrap-components" />
+            <item index="22" class="java.lang.String" itemvalue="psutil" />
+            <item index="23" class="java.lang.String" itemvalue="prettytable" />
+            <item index="24" class="java.lang.String" itemvalue="jedi" />
+            <item index="25" class="java.lang.String" itemvalue="dash-colorscales" />
+            <item index="26" class="java.lang.String" itemvalue="install" />
+            <item index="27" class="java.lang.String" itemvalue="resampy" />
+            <item index="28" class="java.lang.String" itemvalue="dash-core-components" />
+            <item index="29" class="java.lang.String" itemvalue="googledrivedownloader" />
+            <item index="30" class="java.lang.String" itemvalue="dash" />
+            <item index="31" class="java.lang.String" itemvalue="lightgbm" />
+            <item index="32" class="java.lang.String" itemvalue="dtale" />
+            <item index="33" class="java.lang.String" itemvalue="async-generator" />
+            <item index="34" class="java.lang.String" itemvalue="lazypredict" />
+            <item index="35" class="java.lang.String" itemvalue="rsa" />
+            <item index="36" class="java.lang.String" itemvalue="jupyter-core" />
+            <item index="37" class="java.lang.String" itemvalue="isodate" />
+            <item index="38" class="java.lang.String" itemvalue="more-itertools" />
+            <item index="39" class="java.lang.String" itemvalue="mypy-extensions" />
+            <item index="40" class="java.lang.String" itemvalue="ppscore" />
+            <item index="41" class="java.lang.String" itemvalue="torch-sparse" />
+            <item index="42" class="java.lang.String" itemvalue="llvmlite" />
+            <item index="43" class="java.lang.String" itemvalue="numpy" />
+            <item index="44" class="java.lang.String" itemvalue="importlib-metadata" />
+            <item index="45" class="java.lang.String" itemvalue="squarify" />
+            <item index="46" class="java.lang.String" itemvalue="requests-oauthlib" />
+            <item index="47" class="java.lang.String" itemvalue="catboost" />
+            <item index="48" class="java.lang.String" itemvalue="tensorflow" />
+            <item index="49" class="java.lang.String" itemvalue="nest-asyncio" />
+            <item index="50" class="java.lang.String" itemvalue="prompt-toolkit" />
+            <item index="51" class="java.lang.String" itemvalue="tomli" />
+            <item index="52" class="java.lang.String" itemvalue="torch-geometric" />
+            <item index="53" class="java.lang.String" itemvalue="Flask" />
+            <item index="54" class="java.lang.String" itemvalue="scipy" />
+            <item index="55" class="java.lang.String" itemvalue="graph-measures" />
+            <item index="56" class="java.lang.String" itemvalue="pymongo" />
+            <item index="57" class="java.lang.String" itemvalue="google-auth-oauthlib" />
+            <item index="58" class="java.lang.String" itemvalue="parso" />
+            <item index="59" class="java.lang.String" itemvalue="pytest" />
+            <item index="60" class="java.lang.String" itemvalue="dash-html-components" />
+            <item index="61" class="java.lang.String" itemvalue="dash-daq" />
+            <item index="62" class="java.lang.String" itemvalue="kaleido" />
+            <item index="63" class="java.lang.String" itemvalue="lz4" />
+            <item index="64" class="java.lang.String" itemvalue="bitstring" />
+            <item index="65" class="java.lang.String" itemvalue="black" />
+            <item index="66" class="java.lang.String" itemvalue="flask-ngrok" />
+            <item index="67" class="java.lang.String" itemvalue="hyperopt" />
+            <item index="68" class="java.lang.String" itemvalue="ipython" />
+            <item index="69" class="java.lang.String" itemvalue="PythonWebHDFS" />
+            <item index="70" class="java.lang.String" itemvalue="torch" />
+            <item index="71" class="java.lang.String" itemvalue="prometheus-client" />
+            <item index="72" class="java.lang.String" itemvalue="Flask-Compress" />
+            <item index="73" class="java.lang.String" itemvalue="pandas" />
+            <item index="74" class="java.lang.String" itemvalue="shap" />
+            <item index="75" class="java.lang.String" itemvalue="torch-spline-conv" />
+            <item index="76" class="java.lang.String" itemvalue="clang" />
+            <item index="77" class="java.lang.String" itemvalue="dash-table" />
+            <item index="78" class="java.lang.String" itemvalue="jupyter-console" />
+            <item index="79" class="java.lang.String" itemvalue="cachetools" />
+            <item index="80" class="java.lang.String" itemvalue="statsmodels" />
+            <item index="81" class="java.lang.String" itemvalue="tensorboardX" />
+            <item index="82" class="java.lang.String" itemvalue="responses" />
+            <item index="83" class="java.lang.String" itemvalue="grpcio" />
+            <item index="84" class="java.lang.String" itemvalue="json-tricks" />
+            <item index="85" class="java.lang.String" itemvalue="google-auth" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
