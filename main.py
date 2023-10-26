@@ -8,6 +8,7 @@ from collections import OrderedDict
 import random
 import timeit
 import argparse
+import shutil
 
 def load_kidera_values(file_path, idx_to_amino):
     dict_aa_values = {}
@@ -264,11 +265,11 @@ if __name__ == '__main__':
         predict(params, save_dir)
         
 
-    os.rmdir("input/ESMIF1_data_tmp")
-    os.rmdir("input/ESM2_data_tmp")
-    os.rmdir("input/dist_data_tmp")
-    os.rmdir("input/pdb_data_tmp")
+    shutil.rmtree("input/ESMIF1_data_tmp")
+    shutil.rmtree("input/ESM2_data_tmp")
+    shutil.rmtree("input/dist_data_tmp")
+    shutil.rmtree("input/pdb_data_tmp")
     print("FINISH")
-    print("time", timeit.default_timer() - start)
+    #print("time", timeit.default_timer() - start)
 
 
