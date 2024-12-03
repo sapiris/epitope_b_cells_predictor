@@ -56,32 +56,43 @@ def load_data_pdb_list(path, params):
     with open(path, mode='r') as infile:
         for line in infile:
             pdb_id = line.strip()
-            status = download_pdb_and_save(pdb_id, params["pdb_dir"])
+            status = download_pdb_and_save(pdb_id + "_0", params["pdb_dir"])
             if status == 0:
-                dict_chain_seq = extract_sequence_from_pdb(f"{params['pdb_dir']}/{pdb_id}.pdb", pdb_id, params['pdb_dir'], params['distb_dir'])
+                dict_chain_seq = extract_sequence_from_pdb(f"{params['pdb_dir']}/{pdb_id}.pdb", pdb_id,
+                                                           params['pdb_dir'], params['dist_dir'])
                 for chain, seq in dict_chain_seq.items():
-                    all_data.append((chain, seq, []))
+                    pro_name = f"{pdb_id}_{chain.split('_')[0]}"
+                    all_data.append((pro_name, seq, []))
             else:
                 invalid_proteins.append(pdb_id)
                 continue
 
-        print(len(all_data))
-        return all_data, invalid_proteins
+    print(len(all_data))
+    return all_data, invalid_proteins
 
 
 def load_data_pdb_path(path, params):
     all_data = []
     invalid_proteins = []
     all_data_names = set()
-    for file in os.listdir(path):
-        filename = os.fsdecode(file)
-        if filename.endswith(".pdb"):
-            pdb_id = filename.strip()
-            dict_chain_seq = extract_sequence_from_pdb(f"{path}/{filename}", pdb_id, params['pdb_dir'], params['distb_dir'])
-            for chain, seq in dict_chain_seq.items():
-                all_data.append((chain, seq, []))
-        print(len(all_data))
-        return all_data, invalid_proteins
+    for root, dirs, files in os.walk(path):
+        for file in files:
+            #filename = os.fsdecode(file)
+            if file.endswith(".pdb"):
+                pdb_id = file.strip()
+                dict_chain_seq = extract_sequence_from_pdb(f"{path}/{file}", pdb_id, params['pdb_dir'],
+                                                           params['dist_dir'])
+                for chain, seq in dict_chain_seq.items():
+                    pro_name = f"{file.split('.')[0]}_{chain.split('_')[0]}"
+                    all_data.append((pro_name, seq, []))
+        for subdir in dirs:
+            # Recursively search in subdirectories
+            all_data2 , invalid_proteins2 = load_data_pdb_path(os.path.join(root, subdir), params)
+            all_data += all_data2
+            invalid_proteins += invalid_proteins2
+        break
+    print(len(all_data))
+    return all_data, invalid_proteins
 
 def call_esmif1(name_pro, esmif1_encoding_dir, pdb_dir):
 
@@ -164,7 +175,9 @@ def create_batches_rsa(data, params, amino_to_idx, list_aa_prop=None, train=Fals
         if params["initialization"] == "ESM-2":
             list_tag = list_tag[:min(len(list_tag), 1023)]
             list_rsa = list_rsa[:min(len(list_rsa), 1023)]
-        length_pro = len(list_tag)
+            length_pro = min(len(protein), 1023)
+        else:
+            length_pro = len(protein)
         # print("length_pro", length_pro)
         if params["initialization"] == "ESM-IF1":
             if pathlib.Path(f"{ESM_IF1_PATH}/{name_pro}.pt").is_file():
@@ -317,8 +330,9 @@ def create_batches(data, params, amino_to_idx, list_aa_prop = None, train=False)
 
         if params["initialization"] == "ESM-2":
             list_tag = list_tag[:min(len(list_tag), 1023)]
-
-        length_pro = len(list_tag)
+            length_pro = min(len(protein), 1023)
+        else:
+            length_pro = len(protein)
 
         if params["initialization"] == "ESM-IF1":
             if pathlib.Path(f"{ESM_IF1_PATH}/{name_pro}.pt").is_file():
