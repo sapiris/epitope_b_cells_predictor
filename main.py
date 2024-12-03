@@ -70,7 +70,7 @@ def predict(params, save_dir):
     elif params["pdb_id_list_path"]:
         test_data, invalid_proteins = load_data_pdb_list(params["pdb_id_list_path"], params)
     elif params["pdb_id_path"]:
-        test_data = load_data_pdb_path(params["pdb_id_path"], params)
+        test_data, invalid_proteins = load_data_pdb_path(params["pdb_id_path"], params)
     else:
         print("No valid input path was entered")
         exit()
